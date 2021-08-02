@@ -46,7 +46,7 @@ main.appendChild(end)
 
 
 const d1 = document.getElementById("d1")
-d1.addEventListener("click", fazAlgo)
+d1.addEventListener("click", fazAlgo())
 const d2 = document.getElementById("d2")
 d2.addEventListener("click", fazAlgo)
 const d3 = document.getElementById("d3")
