@@ -14,24 +14,33 @@ disk3.id = "d3"
 const disk4 = document.createElement("div")
 disk4.id = "d4"
 
-const towers = document.createElement("div")
-towers.id = "tower"
+//criado uma torre para cada div
+const tower1 = document.createElement("div")
+tower1.id = "tower"
+const tower2 = document.createElement("div")
+tower2.id = "tower"
+const tower3 = document.createElement("div")
+tower3.id = "tower"
+
 start.classList.add("towers")
 offSet.classList.add("towers")
 end.classList.add("towers")
+
 // primeira torre
-start.appendChild(towers)
+start.appendChild(tower1)
 start.appendChild(disk1)
 start.appendChild(disk2)
 start.appendChild(disk3)
 start.appendChild(disk4)
+
 // segunda torre
-offSet.appendChild(towers)
+offSet.appendChild(tower2)
 
 // terceira torre
-end.appendChild(towers)
+end.appendChild(tower3)
 
 //div main
 main.appendChild(start)
 main.appendChild(offSet)
 main.appendChild(end)
+
