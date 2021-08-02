@@ -44,3 +44,16 @@ main.appendChild(start)
 main.appendChild(offSet)
 main.appendChild(end)
 
+
+const d1 = document.getElementById("d1")
+d1.addEventListener("click", fazAlgo)
+const d2 = document.getElementById("d2")
+d2.addEventListener("click", fazAlgo)
+const d3 = document.getElementById("d3")
+d3.addEventListener("click", fazAlgo)
+const d4 = document.getElementById("d4")
+d4.addEventListener("click", fazAlgo)
+
+function fazAlgo (evt) {
+    console.log(evt.target.id)
+}
