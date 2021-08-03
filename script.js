@@ -46,6 +46,20 @@ main.appendChild(offSet)
 main.appendChild(end)
 
 
+const d1 = document.getElementById("d1")
+d1.addEventListener("click", printId)
+const d2 = document.getElementById("d2")
+d2.addEventListener("click", printId)
+const d3 = document.getElementById("d3")
+d3.addEventListener("click", printId)
+const d4 = document.getElementById("d4")
+d4.addEventListener("click", printId)
+
+function printId (evt) {
+    return evt.target.id
+}
+
+
 let currentDisk = '';
 let startDisk;
 const towerStart = (evt) => {
