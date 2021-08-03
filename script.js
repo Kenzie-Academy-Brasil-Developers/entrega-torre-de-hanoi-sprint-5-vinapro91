@@ -62,10 +62,7 @@ function printId (evt) {
 
 let currentDisk = ''
 let startDisk;
-const towerStart = (evt) => {
-           
-   
-    
+const towerStart = (evt) => {    
     if (startDisk === 'tower') {
         startDisk = evt.currentTarget.childNodes[0].id;
     }
@@ -75,22 +72,17 @@ const towerStart = (evt) => {
         currentDisk = startDisk;        
     } 
     else {
-        if (currentDisk === 'tower') {
-            currentDisk = '';
-        }
         let disk = document.getElementById(`${currentDisk}`)
-        console.log(currentDisk)
         start.insertBefore(disk, start.childNodes[1])
         currentDisk = '';
     }   
     
 }
 
-const towerOffset = (evt) => {
+const towerOffset = () => {
     offsetDisk = offSet.firstElementChild.id;
     if (currentDisk === '') {
         currentDisk = offsetDisk;
-        console.log(currentDisk)
     }
     else {
         if (currentDisk === 'tower') {
@@ -102,7 +94,7 @@ const towerOffset = (evt) => {
     }    
 }
 
-const towerEnd = (evt) => {
+const towerEnd = () => {
     endDisk = end.firstElementChild.id;
     if (currentDisk === '') {
         currentDisk = endDisk;
@@ -114,8 +106,7 @@ const towerEnd = (evt) => {
         let disk = document.getElementById(`${currentDisk}`)
         end.insertBefore(disk, end.childNodes[0])
         currentDisk = '';
-    }
-    
+    }    
 }
 
 //const d1 = document.getElementById("d1")
