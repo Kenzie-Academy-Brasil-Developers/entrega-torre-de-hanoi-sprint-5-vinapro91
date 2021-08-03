@@ -89,6 +89,14 @@ const towerOffset = () => {
         currentDisk = '';
     }    
     condVitoriaOff()
+
+    if (offSet.childElementCount > 2) {
+        for (let i=0; i<(offSet.childNodes).length-1; i++){
+            if ((offSet.childNodes[i]).clientWidth > (offSet.childNodes[i+1]).clientWidth){
+                console.log('jogada invalida')
+            }
+        }
+    }
 }
 
 const towerEnd = () => {
