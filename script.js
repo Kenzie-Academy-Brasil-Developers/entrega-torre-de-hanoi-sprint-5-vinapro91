@@ -45,27 +45,24 @@ main.appendChild(start)
 main.appendChild(offSet)
 main.appendChild(end)
 
-let currentTower;
+
 let currentDisk = '';
-let lastDisk;
-console.log(offSet.childNodes[1])
+let startDisk;
 const towerStart = (evt) => {
-    if ((start.childNodes[1].id) === 'undefined') {
-        startDisk = start.childNodes[0].id;
-    } else {
-        startDisk = start.childNodes[1].id;
-    }    
+           
+    console.log(currentDisk)
     
-    if ((startDisk === 'tower') | (startDisk === 'undefined')) {
+    if (startDisk === 'tower') {
         startDisk = start.childNodes[0].id;
     }
 
     if (currentDisk === '') {
-        currentDisk = startDisk;
+        startDisk = start.childNodes[1].id; 
+        currentDisk = startDisk;        
     } 
     else {
         let disk = document.getElementById(`${currentDisk}`)
-        start.insertBefore(disk, start.childNodes[0])
+        start.insertBefore(disk, start.childNodes[1])
         currentDisk = '';
     }   
     
