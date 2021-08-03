@@ -33,6 +33,7 @@ start.appendChild(disk2)
 start.appendChild(disk3)
 start.appendChild(disk4)
 
+
 // segunda torre
 offSet.appendChild(tower2)
 
@@ -44,16 +45,61 @@ main.appendChild(start)
 main.appendChild(offSet)
 main.appendChild(end)
 
+let currentTower;
+let currentDisk = '';
+let lastDisk;
+console.log(offSet.childNodes[1])
+const towerStart = (evt) => {
+    if ((start.childNodes[1].id) === 'undefined') {
+        startDisk = start.childNodes[0].id;
+    } else {
+        startDisk = start.childNodes[1].id;
+    }    
+    
+    if ((startDisk === 'tower') | (startDisk === 'undefined')) {
+        startDisk = start.childNodes[0].id;
+    }
 
-const d1 = document.getElementById("d1")
-d1.addEventListener("click", fazAlgo)
-const d2 = document.getElementById("d2")
-d2.addEventListener("click", fazAlgo)
-const d3 = document.getElementById("d3")
-d3.addEventListener("click", fazAlgo)
-const d4 = document.getElementById("d4")
-d4.addEventListener("click", fazAlgo)
-
-function fazAlgo (evt) {
-    console.log(evt.target.id)
+    if (currentDisk === '') {
+        currentDisk = startDisk;
+    } 
+    else {
+        let disk = document.getElementById(`${currentDisk}`)
+        start.insertBefore(disk, start.childNodes[0])
+        currentDisk = '';
+    }   
+    
 }
+
+const towerOffset = (evt) => {
+    offsetDisk = offSet.firstElementChild.id;
+    if (currentDisk === '') {
+        currentDisk = offsetDisk;
+    }
+    else {
+        let disk = document.getElementById(`${currentDisk}`)
+        offSet.insertBefore(disk, offSet.childNodes[0])
+        currentDisk = '';
+    }    
+}
+
+const towerEnd = (evt) => {
+    endDisk = end.firstElementChild.id;
+    if (currentDisk === '') {
+        currentDisk = endDisk;
+    }
+    else {
+        let disk = document.getElementById(`${currentDisk}`)
+        end.insertBefore(disk, end.childNodes[0])
+        currentDisk = '';
+    }
+    
+}
+
+//const d1 = document.getElementById("d1")
+start.addEventListener("click", towerStart)
+
+offSet.addEventListener("click", towerOffset)
+
+end.addEventListener("click", towerEnd)
+
