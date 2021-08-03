@@ -46,17 +46,13 @@ main.appendChild(offSet)
 main.appendChild(end)
 
 
-const d1 = document.getElementById("d1")
-d1.addEventListener("click", printId)
-const d2 = document.getElementById("d2")
-d2.addEventListener("click", printId)
-const d3 = document.getElementById("d3")
-d3.addEventListener("click", printId)
-const d4 = document.getElementById("d4")
-d4.addEventListener("click", printId)
+disk1.addEventListener("click", printId)
+disk2.addEventListener("click", printId)
+disk3.addEventListener("click", printId)
+disk4.addEventListener("click", printId)
 
 function printId (evt) {
-    return (evt.currentTarget.id)
+    return evt.currentTarget.id
 }
 
 
@@ -92,6 +88,7 @@ const towerOffset = () => {
         offSet.insertBefore(disk, offSet.childNodes[0])
         currentDisk = '';
     }    
+    condVitoriaOff()
 }
 
 const towerEnd = () => {
@@ -106,7 +103,8 @@ const towerEnd = () => {
         let disk = document.getElementById(`${currentDisk}`)
         end.insertBefore(disk, end.childNodes[0])
         currentDisk = '';
-    }    
+    } 
+    condVitoriaEnd()  
 }
 
 //const d1 = document.getElementById("d1")
@@ -116,3 +114,17 @@ offSet.addEventListener("click", towerOffset)
 
 end.addEventListener("click", towerEnd)
 
+
+let compareWinEnd = end.childNodes
+let divVitoria = document.getElementById("win")
+function condVitoriaEnd(){
+if (compareWinEnd[0] === d1 && compareWinEnd[1] === d2 &&compareWinEnd[2] === d3 &&compareWinEnd[3] === d4 ){
+    divVitoria.style.display = "block"
+    }
+}
+let compareWinOff = offSet.childNodes
+function condVitoriaOff(){
+if (compareWinOff[0] === d1 && compareWinOff[1] === d2 &&compareWinOff[2] === d3 &&compareWinOff[3] === d4 ){
+    divVitoria.style.display = "block"
+    }
+}
