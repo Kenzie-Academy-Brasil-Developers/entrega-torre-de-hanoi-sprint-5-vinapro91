@@ -92,6 +92,12 @@ const towerOffset = () => {
         offSet.insertBefore(disk, offSet.childNodes[0])
         currentDisk = '';
     }    
+
+    let towerArr = (offSet.childNodes)
+    for (let i=1; i<towerArr.length; i++){
+        if (towerArr[i-1]).clientWidth;
+    }
+   console.log(towerArr)
 }
 
 const towerEnd = () => {
