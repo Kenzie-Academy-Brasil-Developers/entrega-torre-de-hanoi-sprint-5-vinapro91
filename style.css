@@ -11,14 +11,21 @@ body {
     display: flex;
     justify-content: center;
     height: 90vh;
+    flex-direction: column;
 }
 
 .main {
-    width: 300px;
-    height: 200px;
+    width: 85%;
+    min-width: 300px;
+    height: 100%;
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
+}
+.text {
+    display: flex;
+    justify-content: space-around;
+    width: 85%;
 }
 
 .towers {
@@ -70,8 +77,18 @@ body {
     border: 1px solid black;
     border-radius: 5px;
 }
-
-
+#d1:hover{
+    border: 2px solid red;
+}
+#d2:hover{
+    border: 2px solid red;
+}
+#d3:hover{
+    border: 2px solid red;
+}
+#d4:hover{
+    border: 2px solid red;
+}
 
 @media screen and (min-width: 600px) {
    
@@ -118,4 +135,7 @@ body {
         border: 1px solid black;
         border-radius: 5px;
     }
+    
+
+
   }
