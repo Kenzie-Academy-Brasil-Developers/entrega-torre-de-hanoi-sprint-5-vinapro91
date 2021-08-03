@@ -14,7 +14,7 @@ body {
 }
 
 .main {
-    width: 268px;
+    width: 300px;
     height: 200px;
     display: flex;
     flex-wrap: nowrap;
@@ -71,11 +71,46 @@ body {
     border-radius: 5px;
 }
 
-#tower2 {
-    width: 10px;
-    height: 246px;
-    background: black;
-    position: relative;
-    z-index: -1;
 
-}
+
+@media screen and (min-width: 400px) {
+   
+    .main {
+        width: 85%;
+        justify-content: space-around;
+    }
+    .towers {
+        height: 200px;
+    }
+    #d4{
+        width: 150px;
+        height: 20px;
+        background: cornflowerblue;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    #d3{
+        width: 120px;
+        height: 20px;
+        background:chartreuse;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    #d2{
+        width: 90px;
+        height: 20px;
+        background:chocolate;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+    
+    #d1{
+        width: 60px;
+        height: 20px;
+        background:darkcyan;
+        border: 1px solid black;
+        border-radius: 5px;
+    }
+  }
