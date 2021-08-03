@@ -56,26 +56,30 @@ const d4 = document.getElementById("d4")
 d4.addEventListener("click", printId)
 
 function printId (evt) {
-    return evt.target.id
+    return (evt.currentTarget.id)
 }
 
 
-let currentDisk = '';
+let currentDisk = ''
 let startDisk;
 const towerStart = (evt) => {
            
-    console.log(currentDisk)
+   
     
     if (startDisk === 'tower') {
-        startDisk = start.childNodes[0].id;
+        startDisk = evt.currentTarget.childNodes[0].id;
     }
 
     if (currentDisk === '') {
-        startDisk = start.childNodes[1].id; 
+        startDisk = evt.currentTarget.childNodes[1].id; 
         currentDisk = startDisk;        
     } 
     else {
+        if (currentDisk === 'tower') {
+            currentDisk = '';
+        }
         let disk = document.getElementById(`${currentDisk}`)
+        console.log(currentDisk)
         start.insertBefore(disk, start.childNodes[1])
         currentDisk = '';
     }   
@@ -86,8 +90,12 @@ const towerOffset = (evt) => {
     offsetDisk = offSet.firstElementChild.id;
     if (currentDisk === '') {
         currentDisk = offsetDisk;
+        console.log(currentDisk)
     }
     else {
+        if (currentDisk === 'tower') {
+            currentDisk = '';
+        }
         let disk = document.getElementById(`${currentDisk}`)
         offSet.insertBefore(disk, offSet.childNodes[0])
         currentDisk = '';
@@ -100,6 +108,9 @@ const towerEnd = (evt) => {
         currentDisk = endDisk;
     }
     else {
+        if (currentDisk === 'tower') {
+            currentDisk = '';
+        }
         let disk = document.getElementById(`${currentDisk}`)
         end.insertBefore(disk, end.childNodes[0])
         currentDisk = '';
