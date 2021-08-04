@@ -25,10 +25,11 @@ body {
     flex-direction: column;
     align-items: center;
     font-family: 'Comfortaa', cursive;
+    background-image:url("/img/background.png") ;
 }
 
 .main {
-    /* padding-top: 80px; */
+    padding: 20px 0;
     width: 85%;
     min-width: 300px;
     height: 25%;
@@ -40,7 +41,7 @@ body {
     display: flex;
     justify-content: space-around;
     width: 100%;
-    margin-top: 5px;
+    margin-top: 15px;
     font-size: 18px;
 }
 
@@ -148,7 +149,8 @@ header p {
     color: black;
     font-size: 0.8rem;
     padding: 10px;
-    margin-bottom: 15px;
+    margin-bottom: 25px;
+    box-sizing: border-box;
 }
 .instrucoes h2{
     text-align: center; 
@@ -158,6 +160,7 @@ header p {
 .instrucoes li {
     padding: 2px;
 }
+
 @media screen and (min-width: 600px) {
    
     .main {
