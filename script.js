@@ -167,6 +167,7 @@ function condVitoriaEnd(){
 if (compareWinEnd[0] === d1 && compareWinEnd[1] === d2 &&compareWinEnd[2] === d3 &&compareWinEnd[3] === d4 ){
     divVitoria.childNodes[1].style.display = "block"
     divInstru.style.display = "none"
+    document.body.id='vic'
     }
 }
 let compareWinOff = offSet.childNodes
@@ -174,5 +175,6 @@ function condVitoriaOff(){
 if (compareWinOff[0] === d1 && compareWinOff[1] === d2 &&compareWinOff[2] === d3 &&compareWinOff[3] === d4 ){
     divVitoria.childNodes[1].style.display = "block"
     divInstru.style.display = "none"
+    document.body.id='vic'
     }
 }
