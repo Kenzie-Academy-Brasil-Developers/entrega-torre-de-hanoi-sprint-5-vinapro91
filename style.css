@@ -135,6 +135,15 @@ header p {
     font-size: 30px;
 }
 
+#btnReset {
+    width: 135px;
+    padding: 13px 0;
+    font-size: 15px;
+    border: none;
+    background: rgb(93, 233, 93);
+    border-radius: 8px;
+}
+
 @media screen and (min-width: 600px) {
    
     .main {

@@ -18,6 +18,15 @@ warning.id='danger'
 const container = document.getElementsByClassName('container')[0]
 container.insertBefore(warning, container.childNodes[6])
 
+const form = document.createElement('form');
+form.action='';
+document.body.appendChild(form)
+const buttonReset = document.createElement('input')
+buttonReset.type='submit';
+buttonReset.id='btnReset';
+buttonReset.value='Reset';
+form.appendChild(buttonReset)
+
 
 //criado uma torre para cada div
 const tower1 = document.createElement("div")
