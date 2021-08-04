@@ -143,7 +143,21 @@ header p {
     background: rgb(93, 233, 93);
     border-radius: 8px;
 }
-
+.instrucoes{
+    text-align: justify;
+    color: black;
+    font-size: 0.8rem;
+    padding: 10px;
+    margin-bottom: 15px;
+}
+.instrucoes h2{
+    text-align: center; 
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+.instrucoes li {
+    padding: 2px;
+}
 @media screen and (min-width: 600px) {
    
     .main {
@@ -244,5 +258,8 @@ header p {
         border-radius: 5px;
     } 
 
+    .instrucoes{
+        font-size: 1rem;
+    }
 
 }
