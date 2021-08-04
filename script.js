@@ -82,7 +82,7 @@ const towerStart = (evt) => {
     } 
     else {
         let disk = document.getElementById(`${currentDisk}`)
-        if ((start.childElementCount > 2) && (disk.clientWidth > start.childNodes[1].clientWidth)) {
+        if ((start.childElementCount >= 2) && (disk.clientWidth > start.childNodes[1].clientWidth)) {
             warning.textContent = 'Jogada Inválida!Por favor, leia as instruções!';
         } 
         else {
@@ -108,7 +108,7 @@ const towerOffset = () => {
         let disk = document.getElementById(`${currentDisk}`)
 
         if (playValidation(offSet)) {
-            warning.textContent = 'Jogada Inválida!Por favor leia as instruções!';
+            warning.textContent = 'Jogada Inválida!Por favor, leia as instruções!';
         }
         else {
             offSet.insertBefore(disk, offSet.childNodes[0])            
