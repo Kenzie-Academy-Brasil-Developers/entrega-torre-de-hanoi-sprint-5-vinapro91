@@ -114,7 +114,7 @@ offSet.addEventListener("click", towerOffset)
 
 end.addEventListener("click", towerEnd)
 
-
+// condição de vitoria
 let compareWinEnd = end.childNodes
 let divVitoria = document.getElementById("win")
 function condVitoriaEnd(){
