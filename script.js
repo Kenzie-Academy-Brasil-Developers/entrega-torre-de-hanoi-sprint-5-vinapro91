@@ -15,7 +15,8 @@ const disk4 = document.createElement("div")
 disk4.id = "d4"
 const warning = document.createElement('div')
 warning.id='danger'
-document.body.insertBefore(warning, document.body.childNodes[6])
+const container = document.getElementsByClassName('container')[0]
+container.insertBefore(warning, container.childNodes[6])
 
 
 //criado uma torre para cada div
@@ -154,12 +155,12 @@ let compareWinEnd = end.childNodes
 let divVitoria = document.getElementById("win")
 function condVitoriaEnd(){
 if (compareWinEnd[0] === d1 && compareWinEnd[1] === d2 &&compareWinEnd[2] === d3 &&compareWinEnd[3] === d4 ){
-    divVitoria.style.display = "block"
+    divVitoria.childNodes[1].style.display = "block"
     }
 }
 let compareWinOff = offSet.childNodes
 function condVitoriaOff(){
 if (compareWinOff[0] === d1 && compareWinOff[1] === d2 &&compareWinOff[2] === d3 &&compareWinOff[3] === d4 ){
-    divVitoria.style.display = "block"
+    divVitoria.childNodes[1].style.display = "block"
     }
 }
