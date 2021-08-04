@@ -27,6 +27,16 @@ buttonReset.id='btnReset';
 buttonReset.value='Reset';
 form.appendChild(buttonReset)
 
+const countDiv = document.createElement('div')
+countDiv.id='count';
+const txtCount = document.createElement('p')
+txtCount.textContent = 'Movimentos: ';
+countDiv.appendChild(txtCount);
+const span = document.createElement('span')
+document.body.appendChild(countDiv);
+document.body.appendChild(span);
+
+
 
 //criado uma torre para cada div
 const tower1 = document.createElement("div")
@@ -77,6 +87,7 @@ const playValidation = (arr) =>{
     }
 }
 
+let count = 0;
 let currentDisk = '';
 let startDisk;
 const towerStart = (evt) => {   
@@ -96,10 +107,13 @@ const towerStart = (evt) => {
             warning.textContent = 'Jogada Inválida!Por favor, leia as instruções!';
         } 
         else {
-            start.insertBefore(disk, start.childNodes[1])                
+            start.insertBefore(disk, start.childNodes[1])  
+            count += 1;     
+            span.textContent = count;         
         } 
         currentDisk = '';       
     }       
+    
 }
 
 const towerOffset = () => {
@@ -121,11 +135,14 @@ const towerOffset = () => {
             warning.textContent = 'Jogada Inválida!Por favor, leia as instruções!';
         }
         else {
-            offSet.insertBefore(disk, offSet.childNodes[0])            
+            offSet.insertBefore(disk, offSet.childNodes[0]);
+            count += 1;            
+            span.textContent = count;  
         }
         currentDisk = '';
     }    
     condVitoriaOff()    
+    
 }
 
 const towerEnd = () => {
@@ -145,11 +162,14 @@ const towerEnd = () => {
             warning.textContent = 'Jogada Inválida!Por favor, leia a instruções!';
         } 
         else {
-            end.insertBefore(disk, end.childNodes[0])            
+            end.insertBefore(disk, end.childNodes[0]);
+            count += 1;       
+            span.textContent = count;  
         }
         currentDisk = '';
     } 
     condVitoriaEnd()  
+    
 }
 
 

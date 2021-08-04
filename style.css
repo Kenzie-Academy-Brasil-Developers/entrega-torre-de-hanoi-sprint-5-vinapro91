@@ -167,6 +167,11 @@ header p {
     border: 5px solid rgb(93, 233, 93);
 }
 
+#count {
+    margin-top: 25px;
+    margin-right: 2px;
+}
+
 @media screen and (min-width: 600px) {
    
     .main {
@@ -270,7 +275,7 @@ header p {
     .instrucoes{
         font-size: 1rem;
     }
-    
+
     #vic {
         border: 5px solid transparent;
     }
