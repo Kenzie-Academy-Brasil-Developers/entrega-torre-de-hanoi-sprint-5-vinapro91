@@ -13,6 +13,11 @@ const disk3 = document.createElement("div")
 disk3.id = "d3"
 const disk4 = document.createElement("div")
 disk4.id = "d4"
+const warning = document.createElement('div')
+warning.id='danger'
+const container = document.getElementsByClassName('container')[0]
+container.insertBefore(warning, container.childNodes[6])
+
 
 //criado uma torre para cada div
 const tower1 = document.createElement("div")
@@ -55,28 +60,44 @@ function printId (evt) {
     return evt.currentTarget.id
 }
 
+const playValidation = (arr) =>{
+    let disk = document.getElementById(`${currentDisk}`)
+    
+    if ((arr.childElementCount >= 2) && (disk.clientWidth > arr.childNodes[0].clientWidth)) {
+        return true
+    }
+}
 
-let currentDisk = ''
+let currentDisk = '';
 let startDisk;
-const towerStart = (evt) => {    
+const towerStart = (evt) => {   
+    warning.textContent = '';
+
     if (startDisk === 'tower') {
-        startDisk = evt.currentTarget.childNodes[0].id;
+        startDisk = start.childNodes[0].id;        
     }
 
     if (currentDisk === '') {
-        startDisk = evt.currentTarget.childNodes[1].id; 
-        currentDisk = startDisk;        
+        startDisk = start.childNodes[1].id; 
+        currentDisk = startDisk;       
     } 
     else {
         let disk = document.getElementById(`${currentDisk}`)
-        start.insertBefore(disk, start.childNodes[1])
-        currentDisk = '';
-    }   
-    
+        if ((start.childElementCount >= 2) && (disk.clientWidth > start.childNodes[1].clientWidth)) {
+            warning.textContent = 'Jogada Inválida!Por favor, leia as instruções!';
+        } 
+        else {
+            start.insertBefore(disk, start.childNodes[1])                
+        } 
+        currentDisk = '';       
+    }       
 }
 
 const towerOffset = () => {
+    warning.textContent = '';
+
     offsetDisk = offSet.firstElementChild.id;
+
     if (currentDisk === '') {
         currentDisk = offsetDisk;
     }
@@ -84,15 +105,23 @@ const towerOffset = () => {
         if (currentDisk === 'tower') {
             currentDisk = '';
         }
+
         let disk = document.getElementById(`${currentDisk}`)
-        offSet.insertBefore(disk, offSet.childNodes[0])
+
+        if (playValidation(offSet)) {
+            warning.textContent = 'Jogada Inválida!Por favor, leia as instruções!';
+        }
+        else {
+            offSet.insertBefore(disk, offSet.childNodes[0])            
+        }
         currentDisk = '';
     }    
-    condVitoriaOff()
+    condVitoriaOff()    
 }
 
 const towerEnd = () => {
     endDisk = end.firstElementChild.id;
+
     if (currentDisk === '') {
         currentDisk = endDisk;
     }
@@ -100,14 +129,21 @@ const towerEnd = () => {
         if (currentDisk === 'tower') {
             currentDisk = '';
         }
+
         let disk = document.getElementById(`${currentDisk}`)
-        end.insertBefore(disk, end.childNodes[0])
+
+        if (playValidation(end)) {
+            warning.textContent = 'Jogada Inválida!Por favor, leia a instruções!';
+        } 
+        else {
+            end.insertBefore(disk, end.childNodes[0])            
+        }
         currentDisk = '';
     } 
     condVitoriaEnd()  
 }
 
-//const d1 = document.getElementById("d1")
+
 start.addEventListener("click", towerStart)
 
 offSet.addEventListener("click", towerOffset)
@@ -119,12 +155,12 @@ let compareWinEnd = end.childNodes
 let divVitoria = document.getElementById("win")
 function condVitoriaEnd(){
 if (compareWinEnd[0] === d1 && compareWinEnd[1] === d2 &&compareWinEnd[2] === d3 &&compareWinEnd[3] === d4 ){
-    divVitoria.style.display = "block"
+    divVitoria.childNodes[1].style.display = "block"
     }
 }
 let compareWinOff = offSet.childNodes
 function condVitoriaOff(){
 if (compareWinOff[0] === d1 && compareWinOff[1] === d2 &&compareWinOff[2] === d3 &&compareWinOff[3] === d4 ){
-    divVitoria.style.display = "block"
+    divVitoria.childNodes[1].style.display = "block"
     }
 }
