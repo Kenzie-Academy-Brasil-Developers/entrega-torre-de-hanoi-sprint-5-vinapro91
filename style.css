@@ -146,7 +146,7 @@ header p {
     background: rgb(93, 233, 93);
     border-radius: 8px;
 }
-.instrucoes{
+.instructions{
     text-align: justify;
     color: black;
     font-size: 0.8rem;
@@ -154,12 +154,12 @@ header p {
     margin-bottom: 25px;
     box-sizing: border-box;
 }
-.instrucoes h2{
+.instructions h2{
     text-align: center; 
     font-size: 1rem;
     margin-bottom: 10px;
 }
-.instrucoes li {
+.instructions li {
     padding: 2px;
 }
 
@@ -228,8 +228,18 @@ header p {
 
 @media screen and (min-width: 850px) {
 
+    header p {
+        margin-top: 0;
+    }
+
+    header {
+        margin: 20px 0;
+    }
+
     .container {
         max-width: 900px;
+        justify-content: center;
+        height: 450px;
     }
 
     .text {
@@ -237,7 +247,9 @@ header p {
     }
 
     #tower {
-     height: 199px;   
+        height: 199px;  
+        width: 90px; 
+        background: url('img/eiffel.png');
     }
 
     #d4{
@@ -246,6 +258,7 @@ header p {
         background: cornflowerblue;
         border: 1px solid black;
         border-radius: 5px;
+        opacity: 0.95;
     }
     
     #d3{
@@ -254,6 +267,7 @@ header p {
         background:chartreuse;
         border: 1px solid black;
         border-radius: 5px;
+        opacity: 0.95;
     }
     
     #d2{
@@ -261,7 +275,7 @@ header p {
         height: 23px;
         background:chocolate;
         border: 1px solid black;
-        border-radius: 5px;
+        opacity: 0.95;
     }
     
     #d1{
@@ -270,10 +284,12 @@ header p {
         background:darkcyan;
         border: 1px solid black;
         border-radius: 5px;
+        opacity: 0.95;
     } 
 
-    .instrucoes{
+    .instructions{
         font-size: 1rem;
+        box-sizing: border-box;
     }
 
     #vic {
@@ -283,5 +299,11 @@ header p {
     #btnReset:hover {
         border: 1px solid black;
         cursor: pointer;
+        font-weight: bolder;
+    }
+
+    .main {
+        border-radius: 10px;
+        border: 2px solid gray;
     }
 }

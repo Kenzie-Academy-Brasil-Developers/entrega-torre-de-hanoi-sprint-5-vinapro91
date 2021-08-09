@@ -1,3 +1,4 @@
+
 const main = document.getElementsByClassName("main")[0]
 const start = document.createElement("div")
 start.id = "start"
@@ -36,8 +37,6 @@ const span = document.createElement('span')
 document.body.appendChild(countDiv);
 document.body.appendChild(span);
 
-
-
 //criado uma torre para cada div
 const tower1 = document.createElement("div")
 tower1.id = "tower"
@@ -68,16 +67,6 @@ end.appendChild(tower3)
 main.appendChild(start)
 main.appendChild(offSet)
 main.appendChild(end)
-
-
-disk1.addEventListener("click", printId)
-disk2.addEventListener("click", printId)
-disk3.addEventListener("click", printId)
-disk4.addEventListener("click", printId)
-
-function printId (evt) {
-    return evt.currentTarget.id
-}
 
 const playValidation = (arr) =>{
     let disk = document.getElementById(`${currentDisk}`)
@@ -141,7 +130,7 @@ const towerOffset = () => {
         }
         currentDisk = '';
     }    
-    condVitoriaOff()    
+    condVictoryOff()    
     
 }
 
@@ -168,7 +157,7 @@ const towerEnd = () => {
         }
         currentDisk = '';
     } 
-    condVitoriaEnd()  
+    condVictoryEnd()  
     
 }
 
@@ -180,20 +169,23 @@ offSet.addEventListener("click", towerOffset)
 end.addEventListener("click", towerEnd)
 
 // condição de vitoria
-let divInstru = document.getElementsByClassName("instrucoes")[0]
+let divInstru = document.getElementsByClassName("instructions")[0]
 let compareWinEnd = end.childNodes
-let divVitoria = document.getElementById("win")
-function condVitoriaEnd(){
+let divVictory = document.getElementById("win")
+
+const condVictoryEnd = () => {
+    
 if (compareWinEnd[0] === d1 && compareWinEnd[1] === d2 &&compareWinEnd[2] === d3 &&compareWinEnd[3] === d4 ){
-    divVitoria.childNodes[1].style.display = "block"
+    divVictory.childNodes[1].style.display = "block"
     divInstru.style.display = "none"
     document.body.id='vic'
     }
 }
 let compareWinOff = offSet.childNodes
-function condVitoriaOff(){
+const condVictoryOff = () =>{
+   
 if (compareWinOff[0] === d1 && compareWinOff[1] === d2 &&compareWinOff[2] === d3 &&compareWinOff[3] === d4 ){
-    divVitoria.childNodes[1].style.display = "block"
+    divVictory.childNodes[1].style.display = "block"
     divInstru.style.display = "none"
     document.body.id='vic'
     }
