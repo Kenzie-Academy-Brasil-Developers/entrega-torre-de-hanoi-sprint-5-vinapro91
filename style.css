@@ -228,6 +228,10 @@ header p {
 
 @media screen and (min-width: 850px) {
 
+    body {
+        background-image: url('img/double-bubble.png');
+    }
+
     header p {
         margin-top: 0;
     }
@@ -296,11 +300,19 @@ header p {
         border: 5px solid transparent;
     }
 
+    #btnReset {
+        background: rgb(0, 146, 204);
+        border: 2px solid transparent;
+        color: white;
+    }
+
     #btnReset:hover {
-        border: 1px solid black;
+        border: 2px solid black;
         cursor: pointer;
         font-weight: bolder;
     }
+
+    
 
     .main {
         border-radius: 10px;
